@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-between p-2">
+  <h1>Our cocktail offer:</h1>
+  <%= link_to 'Add a new Cocktail', new_cocktail_path, :style => "color: red; padding: 16px; background-color: black; color: white text-decoration: none" %>
+</div>
+<hr>
+<% @cocktails.each do |cocktail| %>
+  <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+<% end %>
+
