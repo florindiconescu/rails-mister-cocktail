@@ -1,5 +1,6 @@
 class DosesController < ApplicationController
   def new
+    @ingredient = Ingredient.find()
     @dose = Dose.new
   end
 
