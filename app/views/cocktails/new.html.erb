@@ -6,6 +6,8 @@
         <%= f.error_notification %>
         <h5 class="card-title">be creative..</h5>
         <p class="card-text"><%= f.input :name %></p>
+        <p class="card-text"><%= f.input :photo %></p>
+        <p class="card-text"><%= f.input :photo_cache, as: :hidden %></p>
         <%= f.button :submit, class: "btn-outline-success" %>
         <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
         <%= link_to 'Back to cocktails', cocktails_path, class: "btn btn-outline-info" %>
