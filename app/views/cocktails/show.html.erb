@@ -2,8 +2,10 @@
   <div class="card" style="width: 500px;">
     <h5 class="card-header"><%= @cocktail.name %></h5>
     <div class="card-body">
-      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-      <p class="card-text" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+      <% if @cocktail.photo.url %>
+        <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <p class="card-text">
         <% @cocktail.doses.each do |dose| %>
           <li style="list-style-type: none;">
             <%= dose.ingredient.name %>

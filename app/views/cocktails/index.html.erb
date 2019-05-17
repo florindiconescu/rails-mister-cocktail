@@ -7,10 +7,12 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="card img-fluid col-4" style="width:500px">
-        <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+        <% if cocktail.photo.url %>
+          <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+        <% end %>
         <div class="card-img-overlay">
           <h2 class="card-title">
-            <%= link_to cocktail.name, cocktail_path(cocktail), :style => "text-decoration: none; color: white; font-weight: bold" %>
+             <%= link_to cocktail.name, cocktail_path(cocktail), :style => "text-decoration: none; color: white; font-weight: bold" %>
           </h2>
         </div>
       </div>
